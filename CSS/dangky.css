@@ -1,0 +1,51 @@
+.header{
+  height: 80px;
+  border-bottom: 1px solid #E5E5E5;
+}
+
+#form-dangky{
+  background-color: #E5E5E5;
+  height: 820px;
+}
+
+#wrap{
+  padding-left: 120px;
+  padding-right: 120px;
+}
+
+.title{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  color: #555;
+}
+
+.login-social{
+  padding-left: 55px;
+  padding-right: 55px;
+}
+
+#wrap-form{
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.footer{
+  text-align: center;
+}
+
+.form-ul{
+  list-style: none;
+  display: inline;
+}
+
+#month{
+  margin-left: 27px; 
+  margin-right: 27px;  
+  height: 26px;
+}
+
+.err{
+  color: red;
+  padding-left: 37px;
+}

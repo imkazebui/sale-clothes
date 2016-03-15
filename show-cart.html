@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>Website bán hàng thời trang</title>
+
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="./CSS/show-cart.css">
+  <link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="./font-awesome/css/font-awesome.min.css">
+  <script src="./jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>
+
+  <script>
+    $(document).ready(function(){
+      $("#selectbasic").click(function(){
+        var soluong = parseInt($("#selectbasic").val());
+        var dongia = parseInt($("#dongia").text());
+        var thanhtien = soluong * dongia;
+        $("#tong").text(thanhtien + " đ");   
+        $("#thanhtien").text(thanhtien + " đ");   
+      })
+
+    })
+  </script>
+</head>
+<body>
+  <div id="container_content">
+    <div class="showCart">
+      <a href="" class="logoTP2V"></a>
+      <div class="login_tab_payment">
+        <a href="">Đăng nhập</a>
+        <span> tài khoản để quản lý đơn hàng của bạn tốt hơn. Hoặc sử dụng: </span>
+        <span class="fa fa-facebook-official" style="font-size: 20px; color:blue;"></span>
+        <span class="fa fa-google-plus-square" style="font-size: 20px; color: #F44E00;"></span>
+      </div>
+      <div class="giohang">
+        <div class="pull-left fa fa-shopping-cart header_left">   Giỏ hàng của tôi</div>
+        <div class="pull-right header_right">
+          <input type="button" value="+"></input>
+          <a href="">Chọn thêm sản phẩm</a>
+        </div>
+      </div>
+      <div class="sanpham">
+        <div class="pull-left">Sản phẩm</div>
+        <div class="pull-right">
+          <ul>
+            <li>Đơn giá</li>
+            <li>Số lượng</li>
+            <li>Thành tiền</li>
+          </ul>
+        </div>
+      </div>
+      <div class="congty">
+        <div class="pull-left">Công ty TNHH Thời trang TP2V</div>
+        <div class="pull-right"><a href="">+ Mua thêm sản phẩm cùng gian hàng</a></div>
+      </div>
+      <div class="wrap_product">
+        <div class="wrap_row">
+          <div class="product_image">
+            <div class="pull-left">
+              <a href=""><img src="./images/thoitrang/jean-front-s.jpg"></a>
+            </div>
+            <div class="pull-left">
+              <a>Áo Jeans rách phong cách Hàn Quốc</a>
+              <br>
+              <i class="fa fa-trash-o"><a href=""> Xóa</a></i>
+            </div>
+          </div>
+          <ul class="pull-right">
+            <li ><p id="dongia">340000</p></li><span>đ</span>
+            <li>
+                <select id="selectbasic" name="selectbasic" class="form-control">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+            </li>
+            <li id="thanhtien">340.000đ</li>
+          </ul>
+        </div>
+        <div class="pull-right dathang">
+          <p id="tong">Tổng: 340.000đ</p>
+          <br>
+          <a href="./checkout.html"><button class="btn" id="muahang"><span class="fa fa-check"></span> Đặt hàng</button></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="chat">
+    <div id="hide_chat">
+      Chat để được tư vấn    
+      <i class="fa fa-chevron-up"></i>
+    </div>
+  </div>
+</body>
+</html>

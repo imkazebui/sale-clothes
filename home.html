@@ -1,0 +1,1446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>Website bán hàng thời trang</title>
+
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="./CSS/css.css">
+  <link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="./font-awesome/css/font-awesome.min.css">
+  <script src="./jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>
+
+  <script>
+    $(document).ready(function(){
+      $("#dangnhap").click(function(){
+        if ($("#tk").val() == "") {
+          alert("Bạn chưa nhập tài khoản");
+        } else if ($("#mk").val() == ""){
+          alert("Bạn chưa nhập mật khẩu");
+        }
+        if ($("#tk").val() != "admin" && $("#mk").val() != "123")
+          window.location = "./dangnhap.html";
+
+      })
+    })
+  </script>
+
+</head>
+
+<body>
+  <div id="container_body">
+    <!-- Header -->
+    <div id="container_header">
+      <div class="header_bar">
+        <div class="container_width" id="fix_header">
+          <div class="pull-left">
+            <a href="">Gian hàng bán</a>
+            <a href="">Rao vặt</a>
+            <a href="">Hỏi đáp</a>
+            <a href="">Thêm</a>
+            <a href="" style="margin-top: 2px;"><img src=".\images\plugin\google+.png"></a>
+            <a href="" style="margin-top: 2px;"><img src=".\images\plugin\Nutlike.png"></a>
+          </div>
+          <div class="pull-right">
+            <ul class="dropdown_ul">
+              <li><a href=""><i class="fa fa-mobile" style="font-size: 17px;"></i>Ứng dụng</a></li>
+              <li><a href=""><i class="fa fa-globe"></i>Thông báo</a></li>
+              <li><a href=""><i class="fa fa-question-circle"></i>Hỗ trợ</a></li>
+              <li><a href=".\dangky.html"><i class="fa fa-user-plus"></i>Đăng ký</a></li>
+              <li>
+                <a href=""><i class="fa fa-user"></i>Đăng nhập</a>
+                  <ul class="dropdown_login">
+                    <li><a href="" class="fb"></a></li>
+                    <li><a href="" class="gg"></a></li>
+                    <li style="height: 22px; font-size: 12px;"><div style="float: left; margin-left: 30px; margin-top: 3px;">Hoặc đăng nhập bằng ID TP2V</div></li>
+                    <li style="width: 92%; margin-left: 8px;">
+                      <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1"><i class="fa fa-user"></i></span>
+                        <input id="tk" type="text" class="form-control" placeholder="Tên đăng nhập" aria-describedby="basic-addon1">
+                      </div>                      
+                    </li>
+                    <li style="width: 92%; margin-left: 8px;">
+                      <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1"><i class="fa fa-key"></i></span>
+                        <input id="mk" type="password" class="form-control" placeholder="Mật khẩu" aria-describedby="basic-addon1">
+                      </div>                      
+                    </li>
+                    <li style="margin-top: -9px;margin-left: 9px;">
+                      <div class="pull-left checkbox">
+                        <label class="">
+                          <input type="checkbox" name="" value="1">
+                          Nhớ mật khẩu
+                        </label>
+                      </div>
+                      <div class="pull-right" style="margin: 8px 0 10px 0;">
+                        <label>
+                          <a href="" class="pull-right">Quên mật khẩu</a>                                              
+                        </label>
+                      </div>
+                    </li>
+                    <li>
+                      <button id="dangnhap" class="btn btn-primary" style="margin-top: -6px; margin-left: 5px; width: 222px;">
+                        Đăng nhập
+                      </button>
+                    </li>
+                  </ul>
+              </li>
+            </ul>
+            
+            
+          </div>
+        </div>
+      </div>
+      <div class="header_content ">
+        <div class="container_width">
+          <div class="pull-left">
+            <a href=""><img src="./images/logonhom/logo_tp2v.png"></a>
+          </div>
+          <div class="pull-right">
+            <a href=""><img src="./images/lienhe.png"></a>
+          </div>
+          <div class="header_search">
+            <div class="input-group" id="search_box">
+              <div class="input-group-btn">
+                <button type="button" class="btn btn-default dropdown-toggle" id="btn_product" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Sản phẩm
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a href="">Sản phẩm</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="">Hỏi đáp</a></li>
+                </ul>
+              </div>
+              <input type="text" class="form-control" id="input_search" placeholder="Tìm kiếm sản phẩm, thương hiệu bạn mong muốn..."> 
+              <span class="input-group-btn">
+                <button class="btn btn-default" id="btn_search" type="button">Tìm kiếm</button>
+              </span>
+            </div>
+            <div class="support_search input-group">
+              <ul>
+                <li>Xu hướng tìm kiếm:</li>
+                <li><a href="">Zara</a></li>
+                <li><a href="">Jumpsuit</a></li>
+                <li><a href="">Đầm da lộn</a></li>
+                <li><a href="">Bốt nam</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End header -->
+    <!-- Container content -->
+    <div id="container_content" style="background: #F5F5F5" data-spy="scroll" data-target="#myScrollspy" data-offset="15px">
+<!--       <div id="home_search_affix" class="home_search_affix affix-top">
+        <div class="container_width">
+          <div class="pull-left" style="width: 190px;">
+            <div>Toàn bộ danh mục</div>
+          </div>
+          <div class="pull-right">
+            <a href="">Đăng ký</a>
+            <a href="">Đăng nhập</a>
+          </div>
+          <div class="header_search">
+            <div class="input-group" id="search_box">
+              <div class="input-group-btn">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Sản phẩm
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a href="">Sản phẩm</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="">Hỏi đáp</a></li>
+                </ul>
+              </div>
+              <input type="text" class="form-control" placeholder="Tìm kiếm sản phẩm, thương hiệu bạn mong muốn..."> 
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button">Tìm kiếm</button>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div> -->
+      <div id="menu_link" class="menu_link">
+        <div class="container_width_hot">
+          <a href="" class="hot">Đặt hàng áo len chính hãng Zara</a>
+          <a href="" class="hot">Mở gian hàng miễn phí</a>
+          <a href="" class="hot">Giờ vàng giá 99 đồng</a>
+        </div>
+      </div>
+
+      <div id="menu">
+        <div id="menu_list" class="container_width">
+          <div class="wrapper_menu">
+            <h2>Toàn bộ danh mục</h2>
+            <ul id="menu_home_root" class="menu_root">
+              <li><a href="">Thời trang nữ</a><i class="fa fa-caret-down"></i></li>
+              <li><a href="">Thời trang nam</a></li>
+              <li><a href="">Thời trang đồ đôi</a></li>
+              <li><a href="">Thời trang trẻ em</a></li>
+              <li><a href="">Thời trang khiêu vũ</a></li>
+              <li><a href="">Thời trang teen</a></li>
+              <li><a href="">Thời trang gia đình</a></li>
+              <li><a href="">Thời trang đồng phục</a></li>
+              <li><a href="">Thời trang thể thao</a></li>
+              <li><a href="">Thời trang bà bầu</a></li>
+              <li><a href="">Phụ kiện thời trang</a></li>
+              <li><a href="">Túi xách, cặp đựng</a></li>
+              <li><a href="">Đồng hồ đeo tay</a></li>
+              <li><a href="">Đồ trang sức</a></li>
+              <li><a href="">Giày dép</a></li>
+              <li><a href="">Ví - bóp</a></li>
+            </ul>
+          </div>
+        </div>
+        <div id="myCarousel" class="carousel slide" data-ride="carousel" style="background: #597cfe;">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+          </ol>
+
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner" id="fix_quangcao" role="listbox">
+            <div class="item active">
+              <img src="./images/thoitrang/banner2.png" alt="Compter" width="810" height="480">
+            </div>
+
+            <div class="item">
+              <img src="./images/thoitrang/banner1.png" alt="Quan ao" width="810" height="480">
+            </div>
+          </div>
+        </div> 
+        <div class="small_banner">
+          <a href=""><img src="./images/thoitrang/banner-nho-1.png"></a>
+          <a href=""><img src="./images/thoitrang/banner-nho-2.png"></a>
+
+        </div>       
+      </div>
+
+      <!-- Nội dung chính -->
+      <div class="container_width banner_wrap" >
+        <!-- Khung logo company -->
+        <div class="banner">
+          <div class="banner_left">
+            <a href="">
+              <img  src="./images/banner/banner_right.png">
+            </a>
+          </div> 
+          <div class="banner_right">
+            <a href="">
+              <img  src="./images/banner/banner_right.png">
+            </a>
+          </div>    
+          <!-- Add logo company      -->
+          <div class="banner_logo">
+            <a href="">
+              <img src="./images/thoitrang/chanel-l.png">
+            </a>
+            <a href="">
+              <img src="./images/thoitrang/addidas-l.png">
+            </a>
+            <a href="">
+              <img src="./images/thoitrang/gucci.png">
+            </a>
+            <a href="">
+              <img src="./images/thoitrang/prada.png">
+            </a>
+            <a href="">
+              <img src="./images/thoitrang/loreal.png">
+            </a>
+            <a href="">
+              <img src="./images/thoitrang/theface.png">
+            </a>
+            <a href="">
+              <img src="./images/thoitrang/chanel-l.png">
+            </a>
+            <a href="">
+              <img src="./images/thoitrang/addidas-l.png">
+            </a>
+            <a href="">
+              <img src="./images/thoitrang/gucci.png">
+            </a>
+            <a href="">
+              <img src="./images/thoitrang/prada.png">
+            </a>
+            <a href="">
+              <img src="./images/thoitrang/loreal.png">
+            </a>
+            <a href="">
+              <img src="./images/thoitrang/theface.png">
+            </a>
+            <a href="">
+              <img src="./images/thoitrang/chanel-l.png">
+            </a>
+            <a href="">
+              <img src="./images/thoitrang/addidas-l.png">
+            </a>
+            <a href="">
+              <img src="./images/thoitrang/gucci.png">
+            </a>
+            <a href="">
+              <img src="./images/thoitrang/prada.png">
+            </a>
+            <a href="">
+              <img src="./images/thoitrang/loreal.png">
+            </a>
+            <a href="">
+              <img src="./images/thoitrang/theface.png">
+            </a>
+            <a href="">
+              <img src="./images/thoitrang/chanel-l.png">
+            </a>
+            <a href="">
+              <img src="./images/thoitrang/addidas-l.png">
+            </a>
+            <a href="">
+              <img src="./images/thoitrang/gucci.png">
+            </a>
+            <a href="">
+              <img src="./images/thoitrang/prada.png">
+            </a>
+            <a href="">
+              <img src="./images/thoitrang/loreal.png">
+            </a>
+            <a href="">
+              <img src="./images/thoitrang/theface.png">
+            </a>
+          </div>
+          <!-- End of add logo -->
+
+        </div>
+        <!-- End of logo company -->
+        <!-- Khung ben trai -->
+
+        <!-- End khung ben trai -->
+        <!-- Tong quan cac tang -->
+        <!-- <div class="catelory_homepage"  > -->
+        <!-- Floor 1 -->
+        <div id="section1" class="wrapper">    
+          <div class="category">
+            <div class="title" style="background-color: #566ED2; border-bottom: 1px solid #4a61c7;">
+              <span class="floor">1F<b class="arrow"></b></span>
+              <span class="nhan">Thời trang nữ</span>
+            </div>
+            <div class="icon icon_2" style="background-color: #6078DC;">
+              <div>
+                <i class="fa fa-female fa-3x" style="margin-left: 10px;"></i>
+                <div class="sep"></div>
+                <i class="fa fa-magic fa-3x" style="margin-left: 50px;"></i>  
+              </div>
+              <div style="margin-bottom: 10px;">
+                <a href="" style="margin-right: 55px;">Thời trang</a>
+                <a href="" style="margin-right: 10px;">Làm đẹp</a>  
+              </div>
+              
+            </div>
+            <ul class="list">
+              <li><a href="">Áo nữ</a></li>
+              <li><a href="">Quần nữ</a></li>
+              <li><a href="">Đầm váy</a></li>
+              <li><a href="">Áo khoác</a></li>
+              <li><a href="">Chân váy</a></li>
+            </ul>
+            <div id="carousel_1" class="carousel slide" data-ride="carousel">
+              <a href="#carousel_1" class="carousel-control left" id="left" data-slide="pre">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a href="#carousel_1" class="carousel-control right" id="right" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+              <ul class="carousel-inner">
+                <li class="item active">
+                  <a href=""><img src="./images/thoitrang/chanel.png"></a>
+                  <a href=""><img src="./images/thoitrang/gucci.png"></a>
+                </li>
+                <li class="item">
+                  <a href=""><img src="./images/logo company/oppo_small.png"></a>
+                  <a href=""><img src="./images/logo company/lg_small.png"></a>
+                </li>                  
+              </ul>
+            </div>
+          </div>
+          <a href="" class="main_banner">
+            <img src="./images/thoitrang/image-floor-1.jpg">
+          </a>
+          <div class="other_banner">
+            <a href="" class="big">
+              <img src="./images/thoitrang/image-floor-l-1.jpg">
+
+            </a>
+            <a href="" class="small">
+              <img src="./images/thoitrang/image-floor-s-1.jpg">
+
+            </a>
+          </div>
+          <div class="other_banner">
+            <a href="./product-detail.html" class="big">
+              <img src="./images/thoitrang/image-floor-l-2.jpg">
+
+            </a>
+            <a href="" class="small">
+              <img src="./images/thoitrang/image-floor-s-1.jpg">
+
+            </a>
+          </div>
+          <div class="other_banner">
+            <a href="" class="big">
+              <img src="./images/thoitrang/image-floor-l-1.jpg">
+
+            </a>
+            <a href="" class="small">
+              <img src="./images/thoitrang/image-floor-s-1.jpg">
+
+            </a>
+          </div>
+        </div>
+        <div id="productCarousel" class="carousel slide" data-ride="carousel">
+          <div class="tab">
+            <a href="">Đang giảm giá</a>
+            <a href="" style="background-color: red;">HOT nhất</a>
+            <a href="">Quan tâm nhât</a>
+            <a href="">Xem nhiều nhất</a>
+            <a href="">Mua nhiều nhất</a>
+          </div>
+          <a href="#productCarousel" id="left_control" class="left carousel-control" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <div id="product_thumb" class="carousel-inner product_thumb_view" role="listbox">
+            <div class="item active items">
+              <div class="wrapper_product">
+                <div class="block no_picture_thumb">
+                  <div class="main_picture">
+                    <a href=""><img src="./images/thoitrang/image-hot-1.jpg"></a>
+                  </div>
+                  <div class="price">11.800.000d</div>
+                  <div class="name">
+                    <a href="">Sony Alpha A6000 (E 16-50mm F3.5-5.6 OSS) Lens Kit</a>
+                  </div>
+                  <div class="estore">27 gian hàng bán</div>
+                  <div class="statistic">
+                    <span>
+                      <i class="fa fa-comments"></i>
+                      2
+                    </span>
+                    <span>
+                      <i class="fa fa-eye"></i>
+                      20.525
+                    </span>
+                    <span>
+                      <i class="fa fa-shopping-cart"></i>
+                      250
+                    </span>
+                  </div>
+                  <div class="more_content">
+                    <a href="" class="teaser">
+                      • Hãng sản xuất: Sony
+                      <br>
+                      • Hãng sản xuất: Sony
+                      <br>
+                      • Hãng sản xuất: Sony
+                      <br>
+                      • Hãng sản xuất: Sony
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="wrapper_product">
+                <div class="block no_picture_thumb">
+                  <div class="main_picture">
+                    <a href=""><img src="./images/thoitrang/image-hot-2.jpg"></a>
+
+                  </div>
+                  <div class="price">11.800.000d</div>
+                  <div class="name">
+                    <a href="">Sony Alpha A6000 (E 16-50mm F3.5-5.6 OSS) Lens Kit</a>
+                  </div>
+                  <div class="estore">27 gian hàng bán</div>
+                  <div class="statistic">
+                    <span>
+                      <i class="fa fa-comments"></i>
+                      2
+                    </span>
+                    <span>
+                      <i class="fa fa-eye"></i>
+                      20.525
+                    </span>
+                    <span>
+                      <i class="fa fa-shopping-cart"></i>
+                      250
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="wrapper_product">
+                <div class="block no_picture_thumb">
+                  <div class="main_picture">
+                    <a href=""><img src="./images/thoitrang/image-hot-3.jpg"></a>
+
+                  </div>
+                  <div class="price">11.800.000d</div>
+                  <div class="name">
+                    <a href="">Sony Alpha A6000 (E 16-50mm F3.5-5.6 OSS) Lens Kit</a>
+                  </div>
+                  <div class="estore">27 gian hàng bán</div>
+                  <div class="statistic">
+                    <span>
+                      <i class="fa fa-comments"></i>
+                      2
+                    </span>
+                    <span>
+                      <i class="fa fa-eye"></i>
+                      20.525
+                    </span>
+                    <span>
+                      <i class="fa fa-shopping-cart"></i>
+                      250
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="wrapper_product">
+                <div class="block no_picture_thumb">
+                  <div class="main_picture">
+                    <a href=""><img src="./images/thoitrang/image-hot-4.jpg"></a>
+
+                  </div>
+                  <div class="price">11.800.000d</div>
+                  <div class="name">
+                    <a href="">Sony Alpha A6000 (E 16-50mm F3.5-5.6 OSS) Lens Kit</a>
+                  </div>
+                  <div class="estore">27 gian hàng bán</div>
+                  <div class="statistic">
+                    <span>
+                      <i class="fa fa-comments"></i>
+                      2
+                    </span>
+                    <span>
+                      <i class="fa fa-eye"></i>
+                      20.525
+                    </span>
+                    <span>
+                      <i class="fa fa-shopping-cart"></i>
+                      250
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="wrapper_product">
+                <div class="block no_picture_thumb">
+                  <div class="main_picture">
+                    <a href=""><img src="./images/thoitrang/image-hot-5.jpg"></a>
+
+                  </div>
+                  <div class="price">11.800.000d</div>
+                  <div class="name">
+                    <a href="">Sony Alpha A6000 (E 16-50mm F3.5-5.6 OSS) Lens Kit</a>
+                  </div>
+                  <div class="estore">27 gian hàng bán</div>
+                  <div class="statistic">
+                    <span>
+                      <i class="fa fa-comments"></i>
+                      2
+                    </span>
+                    <span>
+                      <i class="fa fa-eye"></i>
+                      20.525
+                    </span>
+                    <span>
+                      <i class="fa fa-shopping-cart"></i>
+                      250
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item items">
+              <div class="wrapper_product">
+                <div class="block no_picture_thumb">
+                  <div class="main_picture">
+                    <a href=""><img src="./images/thoitrang/image-hot-1.jpg"></a>
+                  </div>
+                  <div class="price">11.800.000d</div>
+                  <div class="name">
+                    <a href="">Sony Alpha A6000 (E 16-50mm F3.5-5.6 OSS) Lens Kit</a>
+                  </div>
+                  <div class="estore">27 gian hàng bán</div>
+                  <div class="statistic">
+                    <span>
+                      <i class="fa fa-comments"></i>
+                      2
+                    </span>
+                    <span>
+                      <i class="fa fa-eye"></i>
+                      20.525
+                    </span>
+                    <span>
+                      <i class="fa fa-shopping-cart"></i>
+                      250
+                    </span>
+                  </div>
+                  <div class="more_content">
+                    <a href="" class="teaser">
+                      • Hãng sản xuất: Sony
+                      <br>
+                      • Hãng sản xuất: Sony
+                      <br>
+                      • Hãng sản xuất: Sony
+                      <br>
+                      • Hãng sản xuất: Sony
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="wrapper_product">
+                <div class="block no_picture_thumb">
+                  <div class="main_picture">
+                    <a href=""><img src="./images/thoitrang/image-hot-2.jpg"></a>
+
+                  </div>
+                  <div class="price">11.800.000d</div>
+                  <div class="name">
+                    <a href="">Sony Alpha A6000 (E 16-50mm F3.5-5.6 OSS) Lens Kit</a>
+                  </div>
+                  <div class="estore">27 gian hàng bán</div>
+                  <div class="statistic">
+                    <span>
+                      <i class="fa fa-comments"></i>
+                      2
+                    </span>
+                    <span>
+                      <i class="fa fa-eye"></i>
+                      20.525
+                    </span>
+                    <span>
+                      <i class="fa fa-shopping-cart"></i>
+                      250
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="wrapper_product">
+                <div class="block no_picture_thumb">
+                  <div class="main_picture">
+                    <a href=""><img src="./images/thoitrang/image-hot-3.jpg"></a>
+
+                  </div>
+                  <div class="price">11.800.000d</div>
+                  <div class="name">
+                    <a href="">Sony Alpha A6000 (E 16-50mm F3.5-5.6 OSS) Lens Kit</a>
+                  </div>
+                  <div class="estore">27 gian hàng bán</div>
+                  <div class="statistic">
+                    <span>
+                      <i class="fa fa-comments"></i>
+                      2
+                    </span>
+                    <span>
+                      <i class="fa fa-eye"></i>
+                      20.525
+                    </span>
+                    <span>
+                      <i class="fa fa-shopping-cart"></i>
+                      250
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="wrapper_product">
+                <div class="block no_picture_thumb">
+                  <div class="main_picture">
+                    <a href=""><img src="./images/thoitrang/image-hot-4.jpg"></a>
+
+                  </div>
+                  <div class="price">11.800.000d</div>
+                  <div class="name">
+                    <a href="">Sony Alpha A6000 (E 16-50mm F3.5-5.6 OSS) Lens Kit</a>
+                  </div>
+                  <div class="estore">27 gian hàng bán</div>
+                  <div class="statistic">
+                    <span>
+                      <i class="fa fa-comments"></i>
+                      2
+                    </span>
+                    <span>
+                      <i class="fa fa-eye"></i>
+                      20.525
+                    </span>
+                    <span>
+                      <i class="fa fa-shopping-cart"></i>
+                      250
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="wrapper_product">
+                <div class="block no_picture_thumb">
+                  <div class="main_picture">
+                    <a href=""><img src="./images/thoitrang/image-hot-5.jpg"></a>
+
+                  </div>
+                  <div class="price">11.800.000d</div>
+                  <div class="name">
+                    <a href="">Sony Alpha A6000 (E 16-50mm F3.5-5.6 OSS) Lens Kit</a>
+                  </div>
+                  <div class="estore">27 gian hàng bán</div>
+                  <div class="statistic">
+                    <span>
+                      <i class="fa fa-comments"></i>
+                      2
+                    </span>
+                    <span>
+                      <i class="fa fa-eye"></i>
+                      20.525
+                    </span>
+                    <span>
+                      <i class="fa fa-shopping-cart"></i>
+                      250
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="item">
+              <img src="./images/products/mayanh.jpg">
+            </div>
+            <div class="item">
+              <img src="./images/products/mayanh.jpg">
+            </div> -->
+          </div>
+          <a href="#productCarousel" id="right_control" class="right carousel-control" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+        
+        <!-- End san pham noi bat -->
+        <!-- End floor 1 -->
+        <!-- Floor 2 -->
+        <div id="section2" class="wrapper">    
+          <div class="category">
+            <div class="title" style="background-color: #566ED2; border-bottom: 1px solid #4a61c7;">
+              <span class="floor">2F<b class="arrow"></b></span>
+              <span class="nhan">Thời trang nữ</span>
+            </div>
+            <div class="icon icon_2" style="background-color: #6078DC;">
+              <div>
+                <i class="fa fa-female fa-3x" style="margin-left: 10px;"></i>
+                <div class="sep"></div>
+                <i class="fa fa-magic fa-3x" style="margin-left: 50px;"></i>  
+              </div>
+              <div style="margin-bottom: 10px;">
+                <a href="" style="margin-right: 55px;">Thời trang</a>
+                <a href="" style="margin-right: 10px;">Làm đẹp</a>  
+              </div>
+              
+            </div>
+            <ul class="list">
+              <li><a href="">Áo nữ</a></li>
+              <li><a href="">Quần nữ</a></li>
+              <li><a href="">Đầm váy</a></li>
+              <li><a href="">Áo khoác</a></li>
+              <li><a href="">Chân váy</a></li>
+            </ul>
+            <div id="carousel_1" class="carousel slide" data-ride="carousel">
+              <a href="#carousel_1" class="carousel-control left" id="left" data-slide="pre">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a href="#carousel_1" class="carousel-control right" id="right" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+              <ul class="carousel-inner">
+                <li class="item active">
+                  <a href=""><img src="./images/thoitrang/chanel.png"></a>
+                  <a href=""><img src="./images/thoitrang/gucci.png"></a>
+                </li>
+                <li class="item">
+                  <a href=""><img src="./images/logo company/oppo_small.png"></a>
+                  <a href=""><img src="./images/logo company/lg_small.png"></a>
+                </li>                  
+              </ul>
+            </div>
+          </div>
+          <a href="" class="main_banner">
+            <img src="./images/thoitrang/image-floor-1.jpg">
+          </a>
+          <div class="other_banner">
+            <a href="" class="big">
+              <img src="./images/thoitrang/image-floor-l-1.jpg">
+
+            </a>
+            <a href="" class="small">
+              <img src="./images/thoitrang/image-floor-s-1.jpg">
+
+            </a>
+          </div>
+          <div class="other_banner">
+            <a href="./product-detail.html" class="big">
+              <img src="./images/thoitrang/image-floor-l-2.jpg">
+
+            </a>
+            <a href="" class="small">
+              <img src="./images/thoitrang/image-floor-s-1.jpg">
+
+            </a>
+          </div>
+          <div class="other_banner">
+            <a href="" class="big">
+              <img src="./images/thoitrang/image-floor-l-1.jpg">
+
+            </a>
+            <a href="" class="small">
+              <img src="./images/thoitrang/image-floor-s-1.jpg">
+
+            </a>
+          </div>
+        </div>
+        <!-- End floor 2 -->
+        <!-- Floor 3 -->
+        <div id="section3" class="wrapper">    
+          <div class="category">
+            <div class="title" style="background-color: #566ED2; border-bottom: 1px solid #4a61c7;">
+              <span class="floor">3F<b class="arrow"></b></span>
+              <span class="nhan">Thời trang nữ</span>
+            </div>
+            <div class="icon icon_2" style="background-color: #6078DC;">
+              <div>
+                <i class="fa fa-female fa-3x" style="margin-left: 10px;"></i>
+                <div class="sep"></div>
+                <i class="fa fa-magic fa-3x" style="margin-left: 50px;"></i>  
+              </div>
+              <div style="margin-bottom: 10px;">
+                <a href="" style="margin-right: 55px;">Thời trang</a>
+                <a href="" style="margin-right: 10px;">Làm đẹp</a>  
+              </div>
+              
+            </div>
+            <ul class="list">
+              <li><a href="">Áo nữ</a></li>
+              <li><a href="">Quần nữ</a></li>
+              <li><a href="">Đầm váy</a></li>
+              <li><a href="">Áo khoác</a></li>
+              <li><a href="">Chân váy</a></li>
+            </ul>
+            <div id="carousel_1" class="carousel slide" data-ride="carousel">
+              <a href="#carousel_1" class="carousel-control left" id="left" data-slide="pre">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a href="#carousel_1" class="carousel-control right" id="right" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+              <ul class="carousel-inner">
+                <li class="item active">
+                  <a href=""><img src="./images/thoitrang/chanel.png"></a>
+                  <a href=""><img src="./images/thoitrang/gucci.png"></a>
+                </li>
+                <li class="item">
+                  <a href=""><img src="./images/logo company/oppo_small.png"></a>
+                  <a href=""><img src="./images/logo company/lg_small.png"></a>
+                </li>                  
+              </ul>
+            </div>
+          </div>
+          <a href="" class="main_banner">
+            <img src="./images/thoitrang/image-floor-1.jpg">
+          </a>
+          <div class="other_banner">
+            <a href="" class="big">
+              <img src="./images/thoitrang/image-floor-l-1.jpg">
+
+            </a>
+            <a href="" class="small">
+              <img src="./images/thoitrang/image-floor-s-1.jpg">
+
+            </a>
+          </div>
+          <div class="other_banner">
+            <a href="./product-detail.html" class="big">
+              <img src="./images/thoitrang/image-floor-l-2.jpg">
+
+            </a>
+            <a href="" class="small">
+              <img src="./images/thoitrang/image-floor-s-1.jpg">
+
+            </a>
+          </div>
+          <div class="other_banner">
+            <a href="" class="big">
+              <img src="./images/thoitrang/image-floor-l-1.jpg">
+
+            </a>
+            <a href="" class="small">
+              <img src="./images/thoitrang/image-floor-s-1.jpg">
+
+            </a>
+          </div>
+        </div>
+        <!-- End floor 3 -->
+        <!-- </div> -->
+        <!-- End tong quan cac tang -->
+        <!-- Gioi thieu ve cac estore -->
+        <div id="top_estore" class="top_estore">
+          <ul>
+            <li>
+              <h4>Gian hàng nổi bật nhất</h4>
+              <div>
+                <b id="no_1">1</b>
+                <a href="">Bảo Tuyết Mobile - HỖ TRỢ TRẢ GÓP THỦ TỤC CHỈ CẦN 5' PHÚT</a>
+                <br>
+                <span>Đã tiêu: 1.436.600₫</span>
+              </div>
+              <div>
+                <b class="no_1">2</b>
+                <a href="">Bảo Tuyết Mobile - HỖ TRỢ TRẢ GÓP THỦ TỤC CHỈ CẦN 5' PHÚT</a>
+                <br>
+                <span>Đã tiêu: 1.436.600₫</span>
+              </div>
+              <div>
+                <b class="no_1">3</b>
+                <a href="">Bảo Tuyết Mobile - HỖ TRỢ TRẢ GÓP THỦ TỤC CHỈ CẦN 5' PHÚT</a>
+                <br>
+                <span>Đã tiêu: 1.436.600₫</span>
+              </div>
+              <div>
+                <b class="no_1">4</b>
+                <a href="">Bảo Tuyết Mobile - HỖ TRỢ TRẢ GÓP THỦ TỤC CHỈ CẦN 5' PHÚT</a>
+                <br>
+                <span>Đã tiêu: 1.436.600₫</span>
+              </div>
+              <div>
+                <b class="no_1">5</b>
+                <a href="">Bảo Tuyết Mobile - HỖ TRỢ TRẢ GÓP THỦ TỤC CHỈ CẦN 5' PHÚT</a>
+                <br>
+                <span>Đã tiêu: 1.436.600₫</span>
+              </div>
+            </li>
+            <li>
+              <h4>Tham gia nổi bật nhất</h4>
+              <div>
+                <b id="no_1">1</b>
+                <a href="">Bảo Tuyết Mobile - HỖ TRỢ TRẢ GÓP THỦ TỤC CHỈ CẦN 5' PHÚT</a>
+                <br>
+                <span>Đã tiêu: 1.436.600₫</span>
+              </div>
+              <div>
+                <b class="no_1">2</b>
+                <a href="">Bảo Tuyết Mobile - HỖ TRỢ TRẢ GÓP THỦ TỤC CHỈ CẦN 5' PHÚT</a>
+                <br>
+                <span>Đã tiêu: 1.436.600₫</span>
+              </div>
+              <div>
+                <b class="no_1">3</b>
+                <a href="">Bảo Tuyết Mobile - HỖ TRỢ TRẢ GÓP THỦ TỤC CHỈ CẦN 5' PHÚT</a>
+                <br>
+                <span>Đã tiêu: 1.436.600₫</span>
+              </div>
+              <div>
+                <b class="no_1">4</b>
+                <a href="">Bảo Tuyết Mobile - HỖ TRỢ TRẢ GÓP THỦ TỤC CHỈ CẦN 5' PHÚT</a>
+                <br>
+                <span>Đã tiêu: 1.436.600₫</span>
+              </div>
+              <div>
+                <b class="no_1">5</b>
+                <a href="">Bảo Tuyết Mobile - HỖ TRỢ TRẢ GÓP THỦ TỤC CHỈ CẦN 5' PHÚT</a>
+                <br>
+                <span>Đã tiêu: 1.436.600₫</span>
+              </div>
+            </li>
+            <li>
+              <h4>Giao dịch online thành công</h4>
+              <div>
+                <b id="no_1">1</b>
+                <a href="">Bảo Tuyết Mobile - HỖ TRỢ TRẢ GÓP THỦ TỤC CHỈ CẦN 5' PHÚT</a>
+                <br>
+                <span>Đã tiêu: 1.436.600₫</span>
+              </div>
+              <div>
+                <b class="no_1">2</b>
+                <a href="">Bảo Tuyết Mobile - HỖ TRỢ TRẢ GÓP THỦ TỤC CHỈ CẦN 5' PHÚT</a>
+                <br>
+                <span>Đã tiêu: 1.436.600₫</span>
+              </div>
+              <div>
+                <b class="no_1">3</b>
+                <a href="">Bảo Tuyết Mobile - HỖ TRỢ TRẢ GÓP THỦ TỤC CHỈ CẦN 5' PHÚT</a>
+                <br>
+                <span>Đã tiêu: 1.436.600₫</span>
+              </div>
+              <div>
+                <b class="no_1">4</b>
+                <a href="">Bảo Tuyết Mobile - HỖ TRỢ TRẢ GÓP THỦ TỤC CHỈ CẦN 5' PHÚT</a>
+                <br>
+                <span>Đã tiêu: 1.436.600₫</span>
+              </div>
+              <div>
+                <b class="no_1">5</b>
+                <a href="">Bảo Tuyết Mobile - HỖ TRỢ TRẢ GÓP THỦ TỤC CHỈ CẦN 5' PHÚT</a>
+                <br>
+                <span>Đã tiêu: 1.436.600₫</span>
+              </div>
+            </li>
+            <li>
+              <h4>Được xem nhiều nhất</h4>
+              <div>
+                <b id="no_1">1</b>
+                <a href="">Bảo Tuyết Mobile - HỖ TRỢ TRẢ GÓP THỦ TỤC CHỈ CẦN 5' PHÚT</a>
+                <br>
+                <span>Đã tiêu: 1.436.600₫</span>
+              </div>
+              <div>
+                <b class="no_1">2</b>
+                <a href="">Bảo Tuyết Mobile - HỖ TRỢ TRẢ GÓP THỦ TỤC CHỈ CẦN 5' PHÚT</a>
+                <br>
+                <span>Đã tiêu: 1.436.600₫</span>
+              </div>
+              <div>
+                <b class="no_1">3</b>
+                <a href="">Bảo Tuyết Mobile - HỖ TRỢ TRẢ GÓP THỦ TỤC CHỈ CẦN 5' PHÚT</a>
+                <br>
+                <span>Đã tiêu: 1.436.600₫</span>
+              </div>
+              <div>
+                <b class="no_1">4</b>
+                <a href="">Bảo Tuyết Mobile - HỖ TRỢ TRẢ GÓP THỦ TỤC CHỈ CẦN 5' PHÚT</a>
+                <br>
+                <span>Đã tiêu: 1.436.600₫</span>
+              </div>
+              <div>
+                <b class="no_1">5</b>
+                <a href="">Bảo Tuyết Mobile - HỖ TRỢ TRẢ GÓP THỦ TỤC CHỈ CẦN 5' PHÚT</a>
+                <br>
+                <span>Đã tiêu: 1.436.600₫</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!-- End estore -->
+        <div class="blank"></div>
+        <!-- San pham ban chay -->
+        <div id="seo_product"class="top_estore">
+          <ul>
+            <li>
+              <h4>Sản phẩm mới</h4>
+              <div>
+                <a href="">FILE KHÓA HỘP KINGJIM - 1503E - A3 - 3CM ( MỞ 2 BÊN)</a>
+              </div>
+              <div>
+                <a href="">Ốp lưng Adidas iPhone 6S Plus 020</a>
+              </div>
+              <div>
+                <a href="">FILE KHÓA HỘP KINGJIM - 1503E - A3 - 3CM ( MỞ 2 BÊN)</a>
+              </div>
+              <div>
+                <a href="">Ốp lưng Adidas iPhone 6S Plus 020</a>
+              </div>
+              <div>
+                <a href="">Bảo Tuyết Mobile - HỖ TRỢ TRẢ GÓP THỦ TỤC CHỈ CẦN 5' PHÚT</a>
+              </div>
+              <div>
+                <a href="">FILE KHÓA HỘP KINGJIM - 1503E - A3 - 3CM ( MỞ 2 BÊN)</a>
+              </div>
+              <div>
+                <a href="">FILE KHÓA HỘP KINGJIM - 1503E - A3 - 3CM ( MỞ 2 BÊN)</a>
+              </div>
+              <div>
+                <a href="">Ốp lưng Adidas iPhone 6S Plus 020</a>
+              </div>
+              <div>
+                <a href="">Ốp lưng Adidas iPhone 6S Plus 020</a>
+              </div>
+            </li>
+            <li>
+              <h4>Sản phẩm nổi bật</h4>
+              <div>
+                <a href="">FILE KHÓA HỘP KINGJIM - 1503E - A3 - 3CM ( MỞ 2 BÊN)</a>
+              </div>
+              <div>
+                <a href="">Ốp lưng Adidas iPhone 6S Plus 020</a>
+              </div>
+              <div>
+                <a href="">Toshiba e-Studio 282</a>
+              </div>
+              <div>
+                <a href="">FILE KHÓA HỘP KINGJIM - 1503E - A3 - 3CM ( MỞ 2 BÊN)</a>
+              </div>
+              <div>
+                <a href="">Ốp lưng Adidas iPhone 6S Plus 020</a>
+              </div>
+              <div>
+                <a href="">Toshiba e-Studio 282</a>
+              </div>
+              <div>
+                <a href="">FILE KHÓA HỘP KINGJIM - 1503E - A3 - 3CM ( MỞ 2 BÊN)</a>
+              </div>
+              <div>
+                <a href="">Ốp lưng Adidas iPhone 6S Plus 020</a>
+              </div>
+              <div>
+                <a href="">Toshiba e-Studio 282</a>
+              </div>
+            </li>
+            <li>
+              <h4>Sản phẩm xem nhiều nhất</h4>
+              <div>
+                <a href="">FILE KHÓA HỘP KINGJIM - 1503E - A3 - 3CM ( MỞ 2 BÊN)</a>
+              </div>
+              <div>
+                <a href="">Ốp lưng Adidas iPhone 6S Plus 020</a>
+              </div>
+              <div>
+                <a href="">FILE KHÓA HỘP KINGJIM - 1503E - A3 - 3CM ( MỞ 2 BÊN)</a>
+              </div>
+              <div>
+                <a href="">Ốp lưng Adidas iPhone 6S Plus 020</a>
+              </div>
+              <div>
+                <a href="">Bảo Tuyết Mobile - HỖ TRỢ TRẢ GÓP THỦ TỤC CHỈ CẦN 5' PHÚT</a>
+              </div>
+              <div>
+                <a href="">FILE KHÓA HỘP KINGJIM - 1503E - A3 - 3CM ( MỞ 2 BÊN)</a>
+              </div>
+              <div>
+                <a href="">FILE KHÓA HỘP KINGJIM - 1503E - A3 - 3CM ( MỞ 2 BÊN)</a>
+              </div>
+              <div>
+                <a href="">Ốp lưng Adidas iPhone 6S Plus 020</a>
+              </div>
+              <div>
+                <a href="">Ốp lưng Adidas iPhone 6S Plus 020</a>
+              </div>
+            </li>
+            <li>
+              <h4>Nhiều gian hàng bán</h4>
+              <div>
+                <a href="">FILE KHÓA HỘP KINGJIM - 1503E - A3 - 3CM ( MỞ 2 BÊN)</a>
+              </div>
+              <div>
+                <a href="">Ốp lưng Adidas iPhone 6S Plus 020</a>
+              </div>
+              <div>
+                <a href="">Toshiba e-Studio 282</a>
+              </div>
+              <div>
+                <a href="">FILE KHÓA HỘP KINGJIM - 1503E - A3 - 3CM ( MỞ 2 BÊN)</a>
+              </div>
+              <div>
+                <a href="">Ốp lưng Adidas iPhone 6S Plus 020</a>
+              </div>
+              <div>
+                <a href="">Toshiba e-Studio 282</a>
+              </div>
+              <div>
+                <a href="">FILE KHÓA HỘP KINGJIM - 1503E - A3 - 3CM ( MỞ 2 BÊN)</a>
+              </div>
+              <div>
+                <a href="">Ốp lưng Adidas iPhone 6S Plus 020</a>
+              </div>
+              <div>
+                <a href="">Toshiba e-Studio 282</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!-- End sản phẩm bán chạy -->
+      </div>
+      <div id="myScrollspy" class="affix" style="left: 30px;">
+        <ul data-spy="">
+          <li class="active">
+            <a href="#section1" data-target="#section1"><span style="margin-left: -1px; color:#3E3E3E;" class="fa fa-female fa-2x"></span></a>
+          </li>
+          <li>
+            <a href="#section2" data-target="#section2"><span class="fa fa-male fa-2x color:#3E3E3E;"></span></a>
+          </li>
+          <li>
+            <a href="#section3" data-target="#section3"><span class="fa fa-child fa-2x color:#3E3E3E;"></span></a>
+          </li>
+        </ul>
+      </div>
+      <!-- End nội dung chính -->
+    </div>
+    <!-- End container_content -->
+
+    <!-- Footer -->
+    <div id="container_footer" class="">
+      <!-- Hiển thị 1 lần nữa các danh mục cửa hàng bán -->
+      <ul class="vanchuyen container_width">
+        <li class="support">
+          Hỗ trợ vận chuyển
+          <a href=""><img src="./images/vanchuyen/nhanh.png"></a>
+          </br>Hỗ trợ thanh toán oline
+          <a href=""><img src="./images/vanchuyen/baokim.png"></a>
+          </br>Chấp nhận thanh toán
+          <a href=""><img src="./images/vanchuyen/visa.png"></a>
+          <div>
+            Kết nối với chúng tôi
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+          </div>
+        </li>
+        <li>
+          <h4><a href="">Điện thoại</a></h4>
+          <div>
+            <a href="">Mobile</a>
+            <br>
+            <a href="">Thiết bị viễn thông</a>
+            <br>
+            <a href="">Dịch vụ viễn thông</a>
+            <br>
+            <a href="">Phụ kiện thiết bị, sửa chữa</a>
+            <br>
+          </div>
+          <h4><a href="">Laptop</a></h4>
+          <div>
+            <a href="">Phụ kiện thiết bị, sửa chữa</a>
+            <br>
+            <a href="">Phụ kiện thiết bị, sửa chữa</a>
+            <br>
+            <a href="">Phụ kiện thiết bị, sửa chữa</a>
+            <br>
+            <a href="">Phụ kiện thiết bị, sửa chữa</a>
+            <br>
+          </div>
+          <h4><a href="">Tivi</a></h4>
+          <div>
+            <a href="">Phụ kiện thiết bị, sửa chữa</a>
+            <br>
+            <a href="">Phụ kiện thiết bị, sửa chữa</a>
+            <br>
+            <a href="">Phụ kiện thiết bị, sửa chữa</a>
+            <br>
+            <a href="">Phụ kiện thiết bị, sửa chữa</a>
+            <br>
+          </div>
+        </li>
+        <li>
+          <h4><a href="">Tivi</a></h4>
+          <div>
+            <a href="">Phụ kiện thiết bị, sửa chữa</a>
+            <br>
+            <a href="">Phụ kiện thiết bị, sửa chữa</a>
+            <br>
+            <a href="">Phụ kiện thiết bị, sửa chữa</a>
+            <br>
+            <a href="">Phụ kiện thiết bị, sửa chữa</a>
+            <br>
+          </div>
+          <h4><a href="">Laptop</a></h4>
+          <div>
+            <a href="">Phụ kiện thiết bị, sửa chữa</a>
+            <br>
+            <a href="">Phụ kiện thiết bị, sửa chữa</a>
+            <br>
+            <a href="">Phụ kiện thiết bị, sửa chữa</a>
+            <br>
+            <a href="">Phụ kiện thiết bị, sửa chữa</a>
+            <br>
+          </div>
+          <h4><a href="">Mobile</a></h4>
+          <div>
+            <a href="">Phụ kiện thiết bị, sửa chữa</a>
+            <br>
+            <a href="">Phụ kiện thiết bị, sửa chữa</a>
+            <br>
+            <a href="">Phụ kiện thiết bị, sửa chữa</a>
+            <br>
+            <a href="">Phụ kiện thiết bị, sửa chữa</a>
+            <br>
+          </div>
+        </li>
+        <li>
+          <h4><a href="">Điện thoại</a></h4>
+          <div>
+            <a href="">Phụ kiện thiết bị, sửa chữa</a>
+            <br>
+            <a href="">Phụ kiện thiết bị, sửa chữa</a>
+            <br>
+            <a href="">Phụ kiện thiết bị, sửa chữa</a>
+            <br>
+            <a href="">Phụ kiện thiết bị, sửa chữa</a>
+            <br>
+          </div>
+          <h4><a href="">Điện thoại viễn thông</a></h4>
+          <div>
+            <a href="">Phụ kiện thiết bị, sửa chữa</a>
+            <br>
+            <a href="">Phụ kiện thiết bị, sửa chữa</a>
+            <br>
+            <a href="">Phụ kiện thiết bị, sửa chữa</a>
+            <br>
+            <a href="">Phụ kiện thiết bị, sửa chữa</a>
+            <br>
+          </div>
+          <h4><a href="">Điện thoại viễn thông</a></h4>
+          <div>
+            <a href="">Phụ kiện thiết bị, sửa chữa</a>
+            <br>
+            <a href="">Phụ kiện thiết bị, sửa chữa</a>
+            <br>
+            <a href="">Phụ kiện thiết bị, sửa chữa</a>
+            <br>
+            <a href="">Phụ kiện thiết bị, sửa chữa</a>
+            <br>
+          </div>
+        </li>
+        <li>
+          <h4><a href="">Điện thoại viễn thông</a></h4>
+          <div>
+            <a href="">Phụ kiện thiết bị, sửa chữa</a>
+            <br>
+            <a href="">Phụ kiện thiết bị, sửa chữa</a>
+            <br>
+            <a href="">Phụ kiện thiết bị, sửa chữa</a>
+            <br>
+            <a href="">Phụ kiện thiết bị, sửa chữa</a>
+            <br>
+          </div>
+          <h4><a href="">Điện thoại viễn thông</a></h4>
+          <div>
+            <a href="">Phụ kiện thiết bị, sửa chữa</a>
+            <br>
+            <a href="">Phụ kiện thiết bị, sửa chữa</a>
+            <br>
+            <a href="">Phụ kiện thiết bị, sửa chữa</a>
+            <br>
+            <a href="">Phụ kiện thiết bị, sửa chữa</a>
+            <br>
+          </div>
+          <h4><a href="">Điện thoại viễn thông</a></h4>
+          <div>
+            <a href="">Phụ kiện thiết bị, sửa chữa</a>
+            <br>
+            <a href="">Phụ kiện thiết bị, sửa chữa</a>
+            <br>
+            <a href="">Phụ kiện thiết bị, sửa chữa</a>
+            <br>
+            <a href="">Phụ kiện thiết bị, sửa chữa</a>
+            <br>
+          </div>
+        </li>
+      </ul>
+      <!-- End hiển thị danh mục -->
+      <!-- Gioi thieu ve don vi -->
+      <div id="about" class="container_width">
+        <h3>TP2V.com - Sàn giao dịch thương mại điện tử hàng đầu Việt Nam</h3>
+        Mua hàng trực tuyến mang lại sự tiện lợi, chủ động, lựa chọn đa dạng, với các dịch vụ hỗ trợ mua hàng, bán hàng, thanh toán an toàn, giao hàng chuyên nghiệp.
+        <br>
+        Với phương châm “Luôn đặt mình vào địa vị khách hàng và đối xử trên mong đợi của họ”, TP2V.com không ngừng nỗ lực, cải tiến đáp ứng nhu cầu mua sắm cho người tiêu dùng.
+        <br>
+        TP2V đảm bảo cung cấp đúng thông tin cho đúng người, đúng lúc, đảm bảo thanh toán trực tuyến bảo mật an toàn, áp dụng hình thức vận chuyển nhanh phù hợp.
+      </div>
+      <!-- End gioi thieu ve don vi -->
+      <!-- Gợi ý sản phẩm -->
+      <div class="goiy container_width">
+        <a href="">Iphone 6s</a> |
+        <a href="">Iphone 6s</a> |
+        <a href="">Iphone 6s</a> |
+        <a href="">Iphone 6s</a> |
+        <a href="">Iphone 6s</a> |
+        <a href="">Iphone 6s</a> |
+        <a href="">Iphone 6s</a> |
+        <a href="">Iphone 6s</a> |
+        <a href="">Iphone 6s</a> |
+        <a href="">Iphone 6s</a> |
+        <a href="">Iphone 6s</a> |
+        <a href="">Iphone 6s</a> |
+        <a href="">Iphone 6s</a> |
+        <a href="">Iphone 6s</a> |
+        <a href="">Iphone 6s</a> |
+        <a href="">Iphone 6s</a> |
+        <a href="">Iphone 6s</a> |
+        <a href="">Iphone 6s</a> |
+        <a href="">Iphone 6s</a> |
+        <a href="">Iphone 6s</a> |
+        <a href="">Iphone 6s</a> |
+        <a href="">Iphone 6s</a> |
+        <a href="">Iphone 6s</a> |
+        <a href="">Iphone 6s</a> |
+        <a href="">Iphone 6s</a> |
+        <a href="">Iphone 6s</a> |
+        <a href="">Iphone 6s</a> |
+        <a href="">Iphone 6s</a> |
+        <a href="">Iphone 6s</a> |
+        <a href="">Iphone 6s</a> |
+        <a href="">Iphone 6s</a> |
+        <a href="">Iphone 6s</a> |
+        <a href="">Iphone 6s</a> |
+        <a href="">Iphone 6s</a> |
+        <a href="">Iphone 6s</a> |
+        <a href="">Iphone 6s</a> |
+        <a href="">Iphone 6s</a> |
+        <a href="">Iphone 6s</a> |
+        <a href="">Iphone 6s</a> |
+        <a href="">Iphone 6s</a> |
+        <a href="">Iphone 6s</a> |
+        <a href="">Iphone 6s</a> |
+        <a href="">Iphone 6s</a> |
+        <a href="">Iphone 6s</a> |
+        <a href="">Iphone 6s</a> |
+        <a href="">Iphone 6s</a> |
+        <a href="">Iphone 6s</a> |
+        <a href="">Iphone 6s</a> |
+        <a href="">Iphone 6s</a> |
+        <a href="">Iphone 6s</a> |
+        <a href="">Iphone 6s</a> 
+      </div>
+      <!-- End gợi ý -->
+      <!-- Giay phep chung nhan -->
+      <div class="giayphep">
+        <div class="giayphep_contents container_width">
+          <div class="image_dangky pull-right">
+            <br>
+            <a href=""><img src="./images/logonhom/tp2v.png"></a>
+            <a href=""><img src="./images/logonhom/dangky.png"></a>
+          </div>
+          <div class="giayphep_content pull-left">
+            <div style="margin-bottom: 6px;">
+              <a style="margin-right: 6px;" href="">Giới thiệu</a> |
+              <a style="margin: 0 6px 0 6px;" href="">Hướng dẫn</a> |
+              <a style="margin: 0 6px 0 6px;" href="">Quy chế hoạt động</a> |
+              <a style="margin: 0 6px 0 6px;" href="">Chính sách bảo mật thông tin</a> 
+            </div>
+            Công ty Cổ phần TP2V Việt Nam. Số GCNDT: 011032001615, cấp ngày 09/12/2015, nơi cấp: UBND thành phố Hồ Chí Minh
+            <br>
+            Trụ sở chính: Lê Đại Hành, Hai Bà Trưng, Hà Nội - Chi nhánh Hồ Chí Minh: Đường Lữ Gia, Phường 15, Quận 11, Hồ Chí Minh
+          </div>
+        </div>
+      </div>
+      <!-- End giấy phép chứng nhận -->
+      <!-- Menu right -->
+      <div id="mini_menu_bar_right">
+        <div id="mini_bar_menu" style="width: 35px;">
+          <a href="" class="minibar_user" style><i class="fa fa-user"></i><p>Tài khoản</p></a>
+          <a href=".\show-cart.html" class="minibar_card"><i class="fa fa-shopping-cart"></i><p>Giỏ hàng</p></a>
+          <a href="" class="minibar_view"><i class="fa fa-eye"></i><p>Đã xem</p></a>
+          <a href="" id="minibar_app"><i class="fa fa-mobile"></i><p>Ứng dụng</p></a>
+          <a href="" class="minibar_top"><i class="fa fa-arrow-up"></i></a>
+        </div>
+        <!-- <div id="mini_bar_content"></div> -->
+      </div>
+      <!-- End menu right -->
+    </div>
+    <!-- End footer -->
+  </div>
+  <!-- Show chat box -->
+  <div id="chat">
+    <div id="hide_chat">
+      Chat để được tư vấn    
+      <i class="fa fa-chevron-up"></i>
+    </div>
+  </div>
+  <!-- End of show chat box -->
+</body>
+</html>

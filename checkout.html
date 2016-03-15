@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>Website bán hàng thời trang</title>
+
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="./CSS/checkout.css">
+  <link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="./font-awesome/css/font-awesome.min.css">
+  <script src="./jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>
+
+  <script>
+    $(document).ready(function(){
+      $("#selec_soluong").click(function(){
+        var soluong = parseInt($("#selec_soluong").val());
+        var thanhtien = soluong * 340000;
+        $("#tong").text(thanhtien + " đ");   
+        $("#thanhtoan").text(thanhtien + " đ");   
+      })
+    })   
+  </script>
+</head>
+<body>
+  <div id="container_content">
+      <a href="" class="logoTP2V"></a>
+      <div class="login_tab_payment">
+        <a href="">Đăng nhập</a>
+        <span> tài khoản để quản lý đơn hàng của bạn tốt hơn. Hoặc sử dụng: </span>
+        <span class="fa fa-facebook-official" style="font-size: 20px; color:blue;"></span>
+        <span class="fa fa-google-plus-square" style="font-size: 20px; color: #F44E00;"></span>
+      </div>
+      <form onsubmit="chuyentrang()" action="check-otp.html">
+        <div class="payment">
+          <div class="col-sm-4" id="pad">
+            <p class="title">Thông tin người mua</p>
+            <input type="text" placeholder="Họ và tên" class="form-control input-md" required>
+            <br>
+            <input type="email" placeholder="Email" class="form-control input-md" required>
+            <br>
+            <p>*TP2V shop sẽ gửi thông báo xác nhận đơn hàng theo email này</p>
+            <br>
+            <input type="text" placeholder="Số điện thoại" class="form-control input-md" required="">
+            <br>
+            <div class="">
+              <div class="pull-left">
+                <select id="selectbasic" name="selectbasic" class="form-control" required>
+                  <option value="1">Tỉnh/Thành phố</option>
+                  <option value="2">HCM</option>
+                  <option value="3">Hà Nội</option>
+                </select>
+              </div>
+              <div class="pull-right">
+                <select id="selectbasic" name="selectbasic" class="form-control" required>
+                  <option value="1">Quận/Huyện</option>
+                  <option value="2">Quận 1</option>
+                  <option value="3">Quận 2</option>
+                </select>
+              </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <textarea required class="form-control" id="textarea" name="textarea" placeholder="Số nhà, đường phố, tòa nhà, thôn xã,..."></textarea>
+            <br>
+            <div class="infor_buyer">
+              <p><b>Thông tin người nhận</b></p>
+              <label>
+                <input type="checkbox" checked="checked" value="2">
+                Thông tin người nhận trùng với thông tin người mua
+              </label>
+            </div>       
+          </div>
+          <div class="col-sm-4 mid" id="pad">
+            <p class="title">Hình thức thanh toán</p>
+            
+            <div class="radio">
+              <label for="radios-0">
+                <input type="radio" name="radios" id="radios-0" value="1" checked="checked">
+                Thanh toán khi nhận hàng
+              </label>
+            </div>
+            <div class="radio">
+              <label for="radios-1">
+                <input type="radio" name="radios" id="radios-1" value="2">
+                Thanh toán online (miễn phí)
+              </label>
+            </div>
+            
+            <div class="baomat">
+              <div class="col-sm-3"><i class="baomat_logo"></i></div>
+              <div class="col-sm-9">
+                <p>Thanh toán online tại TP2V Shop được cam kết bảo mật theo chính sách của cổng thanh toán Baokim.vn 
+                  <span>
+                    <a href="">Xem chi tiết</a>  
+                  </span>
+                </p>
+                <ul>
+                  <li>- An toàn 100%</li>
+                  <li>- Bảo hiểm 20.000.000đ</li>
+                  <li>- Miễn phí 100%</li>
+                  <li>- Đơn giản-nhanh gọn</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4" id="pad">
+            <p class="title">Hóa đơn mua hàng</p>
+            <div>Gian hàng: Công ty TNHH Thời trang TP2V</div>
+            <br>
+            <div>
+              <a href="" class="pull-left"><img src="./images/thoitrang/jean-front-s.jpg"></a>
+              <p>Áo Jean rách phong cách Hàn Quốc</p>
+              <br>
+              <i class="fa fa-trash-o"><a href=""> Xóa</a></i>
+              <span class="pull-right">
+                <select id="selec_soluong" name="selec_soluong" class="">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+                x 340.000đ
+              </span>
+            </div>
+            <br>
+            <br>
+            <div style="height: 30px;">
+              <p class="pull-left">Tổng tiền hàng:</p>
+              <span id="tong" class="pull-right">340.000đ</span>  
+            </div>
+            <div style="height: 30px;">
+              <p class="pull-left">Phí giao hàng </p>
+              <span class="pull-right">0đ</span>  
+            </div>
+
+            <div style="height: 30px;">
+              <p class="pull-left">Bạn có mã giảm giá <span><a href="">Áp dụng</a></span></p>
+            </div>
+         
+            <div style="height: 30px;">
+              <p class="pull-left">Tổng thanh toán</p>
+              <span id="thanhtoan" class="pull-right" style="color: #F44E00;">340.000đ</span>  
+            </div>
+
+            <div>
+              <a>Tôi muốn xuất hóa đơn</a>
+            </div>
+            <br>
+            <div >
+              <input type="text" placeholder="Thêm ghi chú cho đơn hàng..." class="form-control">
+            </div>
+            <br>
+            <div>
+              <button type="submit" id="dathang" class="btn form-control" style="background-color: #F44E00; height: 40px;"><b style="color: white;">Đặt hàng</b></button>
+            </div>
+          </div>
+        </div>  
+      </form>
+      
+  </div>
+  <div id="chat">
+    <div id="hide_chat">
+      Chat để được tư vấn    
+      <i class="fa fa-chevron-up"></i>
+    </div>
+  </div>
+</body>
+</html>

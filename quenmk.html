@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>Website bán hàng thời trang</title>
+
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="./font-awesome/css/font-awesome.min.css">
+  <script src="./jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>
+
+  <script>
+    $(document).ready(function(){
+
+      $("#radios-dt").click(function(){
+        $("#lay-bang-dt").removeClass("hide");
+      })
+      $("#radios-emal").click(function(){
+        $("#lay-bang-dt").addClass("hide");
+      })
+      $("#radios-tk").click(function(){
+        $("#lay-bang-dt").addClass("hide");
+      })
+
+      $("#huybo").click(function(){
+        window.location = "./dangnhap.html";
+      })
+
+      $("#tieptuc").click(function(){
+        if ($("#radios-dt").is(":checked")){
+          if ($("#phone").val() == "01676719148") {
+            window.location = "./doi-mk.html";
+          } else {
+            alert("Số điện thoại này chưa được đăng ký");
+          }
+        }
+      })
+
+    })
+  </script>
+  <style>
+    .header{
+      background: #f8f8f8;
+      border-bottom: 1px solid #e0e0e0;
+      height: 74px;
+    }
+    .content{
+      padding-left: 200px;
+      padding-right: 200px;
+    }
+    .content p{
+      padding-top: 15px;
+    }
+    #phone{
+      height: 30px;
+      width: 250px;
+    }
+    #lay-bang-dt{
+      padding-left: 20px;
+    }
+    .nhomnut{
+      padding-left: 20px;
+    }
+    .footer{
+      border-top: 1px solid #E8E8E8;
+      bottom: 0;
+      height: 29px;
+      padding-top: 5px;
+      position: absolute;
+      width: 100%;
+      z-index: 999;
+      background: #fff;
+    }
+    .footer li{
+      list-style: none;
+      padding-right: 30px;
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container-fluid header">
+    <a href="">
+      <img style="padding-left: 20px; padding-top: 10px;" src="./images/logonhom/logo_tp2v.png">;
+    </a>
+  </div>
+  <div class="content">
+    <div style="border-bottom: 1px solid #e5e5e5;">
+      <h3 style="color: blue;"><b>Trợ giúp khôi phục mật khẩu</b></h3>
+      <p>Bạn có thể lấy lại mật khẩu bằng những cách sau</p>
+    </div>
+    <br>
+    <div class="radio">
+      <label for="radios-0">
+        <input type="radio" name="radios" id="radios-tk" value="0">
+        Lấy lại mật khẩu bằng email
+      </label>
+    </div>
+    <div class="radio">
+      <label for="radios-0">
+        <input type="radio" name="radios" id="radios-dt" value="1">
+        Lấy lại mật khẩu bằng số điện thoại
+      </label>
+    </div>
+    <div id="lay-bang-dt" class="hide">
+      <p>Để đặt lại mật khẩu của mình, hãy điền số điện thoại mà bạn đăng ký.</p>
+      <p>Số điện thoại</p>
+      <input id="phone" class="input-md" placeholder="Số điện thoại bạn đã đăng ký"></input>
+    </div>
+    <div class="radio">
+      <label for="radios-0">
+        <input type="radio" name="radios" id="radios-tk" value="2">
+        Lấy lại mật khẩu bằng tên đăng nhập
+      </label>
+    </div>
+    <div class="nhomnut">
+      <button class="btn btn-primary"id="tieptuc">Tiếp tục</button>
+      <button class="btn btn-danger"id="huybo">Hủy bỏ</button>
+    </div>
+  </div>
+  <div class="footer">
+    <ul>
+      <li>@2015 bởi TP2V</li>
+      <li><a href="">Điều khoản dịch vụ</a></li>
+      <li><a href="">Chính sách bảo mật</a></li>
+    </ul>
+  </div>
+</body>
+</html>

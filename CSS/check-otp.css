@@ -1,0 +1,74 @@
+
+#hide_chat{
+  background-color: #365db5;
+  border: 1px solid #2C498F;
+  border-radius: 5px 5px 0 0;
+  bottom: -1px;
+  box-shadow: 0 0 1px #fff inset;
+  height: 32px;
+  line-height: 32px;
+  padding:  0px 30px 0 10px;
+  position: fixed;
+  right: 42px;
+  z-index: 9999;
+  border-bottom: none;
+  font-weight: bold;
+  cursor: pointer;
+  min-width: 207px;
+  max-width: 320px;
+  white-space: nowrap;
+  font-family: arial;
+  font-size: 15px;
+  color: #fff;
+}
+
+#hide_chat i{
+  position: absolute;
+  right: 0;
+  margin: 7px 7px 0 0;
+}
+
+.logoTP2V{
+  background: url("../images/logonhom/logo_tp2v.png") 0px center #FFFFFF;
+  width: 190px;
+  height: 50px;
+  display: block;
+  margin: 30px auto 30px;
+}
+
+.payment{
+  width: 740px;
+  display: block;
+  margin: 0 auto 6px;
+  border: 1px solid #ccc;
+  background: #f8f8f8;
+  padding: 10px 20px 0px 30px;
+  height: 360px;
+  background: #FFFFFF;
+}
+
+.icon_otp{
+  background: url("../images/thoitrang/payment_otp.png") no-repeat transparent;
+  display: block;
+  width: 86px;
+  height: 88px;
+  margin: 15px;
+}
+
+.payment_title{
+  color: #365db5;
+  font-size: 30px;
+  width: 520px;
+  display: block;
+  padding-top: 18px;
+  font-family: arial;
+}
+
+#xacthuc{
+  background-color: #F44E00; 
+  height: 34px;
+  width: 107px;
+  border-radius: 0;
+  margin-bottom: 2px;
+  margin-left: 6px;
+}

@@ -1,0 +1,142 @@
+
+.logoTP2V{
+  background: url("../images/logonhom/logo_tp2v.png") 0px center #FFFFFF;
+  width: 190px;
+  height: 50px;
+  display: block;
+  margin: 30px auto 30px;
+}
+
+.giohang{
+  border: 1px solid #E5E5E5;
+  background-color: #f8f8f8;
+  height: 35px; 
+  height: 42px;
+}
+
+.sanpham{
+  height: 36px;
+  border: 1px solid #E5E5E5;
+  padding-top: 10px;
+  background-color: #fcfcfc;
+  padding-left: 10px;
+
+}
+
+.sanpham li{
+  list-style: none;
+  margin-right: 40px;
+  display: inline-block;
+}
+
+.congty{
+  margin-top: 23px;
+  height: 35px;
+}
+
+.wrap_row li{
+  display: inline-block;
+  list-style: none;
+  margin-right: 20px;
+  margin-left: 20px; 
+}
+
+.wrap_row{
+  border-bottom: 1px solid #E5E5E5;
+  height: 121px;
+  padding: 18px 18px 18px 10px;
+}
+
+.wrap_row ul{
+  padding-top: 20px;
+}
+
+.wrap_product{
+  height: 211px;
+  border: 1px solid #e5e5e5;
+  background-color: #f8f8f8
+}
+
+
+.product_image div i{
+  padding-top: 20px;
+}
+
+.product_image div {
+  margin-left: 20px;
+}
+
+#muahang{
+  background-color: #F44E00;
+  color: white;
+  width: 162px;
+  height: 36px;
+}
+
+.showCart{
+  width: 100%;
+  max-width: 942px;
+  min-width: 750px;
+  margin: 10px auto;
+  font-size: 13px;
+  color: #333;
+}
+
+.login_tab_payment{
+  display: block;
+  margin: 0 auto 6px;
+  border: 1px dashed #dedede;
+  background: #f8f8f8;
+  padding: 10px;
+  font-size: 13px;
+}
+
+.giohang .header_left{
+  margin-left: 9px;
+  font-size: 17px;
+  font-weight: bold;
+  padding-top: 13px;
+}
+
+.giohang .header_right{
+  padding-top: 10px;
+  margin-right: 9px;
+}
+
+.dathang{
+  margin-right: 10px;
+}
+
+.dathang p{
+  float: right;
+  padding-top: 10px;
+}
+
+#hide_chat{
+  background-color: #365db5;
+  border: 1px solid #2C498F;
+  border-radius: 5px 5px 0 0;
+  bottom: -1px;
+  box-shadow: 0 0 1px #fff inset;
+  height: 32px;
+  line-height: 32px;
+  padding:  0px 30px 0 10px;
+  position: fixed;
+  right: 42px;
+  z-index: 9999;
+  border-bottom: none;
+  font-weight: bold;
+  cursor: pointer;
+  min-width: 207px;
+  max-width: 320px;
+  white-space: nowrap;
+  font-family: arial;
+  font-size: 15px;
+  color: #fff;
+}
+
+#hide_chat i{
+  position: absolute;
+  right: 0;
+  margin: 7px 7px 0 0;
+}

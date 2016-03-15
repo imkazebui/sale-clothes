@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>Website bán hàng thời trang</title>
+
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="./font-awesome/css/font-awesome.min.css">
+  <script src="./jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>
+
+  <script>
+    $(document).ready(function(){
+      $("#guima").click(function(){
+        alert("Đã gửi lại mã");
+      })
+      $("#form-mk").submit(function(event){
+        if($("#code").val() == "123"){
+          if ($("#mk1").val() == $("#mk2").val()) {
+            alert("Đổi mật khẩu thành công");
+            window.location = "./home-admin.html";
+            event.preventDefault();
+          } else {
+            alert("Mật khẩu không trùng khớp");
+          }
+        } else{
+          alert("Sai mã xác nhận");
+        }
+      })
+    })
+  </script>
+  <style>
+    .header{
+      background: #f8f8f8;
+      border-bottom: 1px solid #e0e0e0;
+      height: 74px;
+    }
+    .footer{
+      border-top: 1px solid #E8E8E8;
+      bottom: 0;
+      height: 29px;
+      padding-top: 5px;
+      position: absolute;
+      width: 100%;
+      z-index: 999;
+      background: #fff;
+    }
+    .footer li{
+      list-style: none;
+      padding-right: 30px;
+      display: inline-block;
+    }
+    .content{
+      padding-left: 150px;
+      padding-right: 450px;
+    } 
+    .note{
+      padding: 8px 35px 8px 14px;
+      margin-bottom: 20px;
+      color: #c09853;
+      text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+      background-color: #fcf8e3;
+      border: 1px solid #fbeed5;
+      border-radius: 4px;      
+    } 
+    #guima{
+      cursor: pointer;
+    }
+    </style>
+</head>
+
+<body>
+  <div class="container-fluid header">
+    <a href="">
+      <img style="padding-left: 20px; padding-top: 10px;" src="./images/logonhom/logo_tp2v.png">;
+    </a>
+  </div>
+  <div class="content">
+    <h3 style="color: blue;">Cập nhật mật khẩu</h3>
+    <div class="note">
+      <h4>Chú ý !</h4>
+      <p>Sau khi đổi mật khẩu thành công, bạn nên đăng nhập bằng email hoặc số điện thoại gắn với tài khoản.</p>
+    </div>
+
+    <form class="form-horizontal" id="form-mk">
+      <fieldset>
+
+        <!-- Text input-->
+        <div class="form-group">
+          <label style="text-align:left;" class="col-md-3 control-label" for="textinput">Mã xác nhận</label>  
+          <div class="col-md-6">
+            <input id="code" name="textinput" type="text" placeholder="Mã xác nhận đã được gửi vào số điện thoại của bạn" class="form-control input-md" required="">
+            <span class="help-block"><a id="guima">Chưa nhận được mã?</a></span>  
+          </div>
+        </div>
+
+        <!-- Password input-->
+        <div class="form-group">
+          <label style="text-align:left;" class="col-md-3 control-label" for="passwordinput">Xác nhận mật khẩu mới</label>
+          <div class="col-md-6">
+            <input id="mk1" name="passwordinput" type="password" placeholder="Xác nhận mật khẩu mới" class="form-control input-md" required="">
+          </div>
+        </div>
+
+        <!-- Password input-->
+        <div class="form-group">
+          <label style="text-align:left;" class="col-md-3 control-label" for="passwordinput">Mật khẩu mới</label>
+          <div class="col-md-6">
+            <input id="mk2" name="passwordinput" type="password" placeholder="Mật khẩu mới" class="form-control input-md" required="">
+            
+          </div>
+        </div>
+
+        <!-- Button (Double) -->
+        <div class="form-group">
+          <label class="col-md-3 control-label" for="button1id"></label>
+          <div class="col-md-8">
+            <button id="xacnhan" type="submit" name="button1id" class="btn btn-success">Xác nhận</button>
+            <button id="huybo" name="button2id" class="btn btn-danger">Hủy bỏ</button>
+          </div>
+        </div>
+
+      </fieldset>
+    </form>
+
+  </div>
+  <div class="footer">
+    <ul>
+      <li>@2015 bởi TP2V</li>
+      <li><a href="">Điều khoản dịch vụ</a></li>
+      <li><a href="">Chính sách bảo mật</a></li>
+    </ul>
+  </div>
+</body>
+</html>

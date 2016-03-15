@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>Website bán hàng thời trang</title>
+
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="./CSS/dangky.css">
+  <link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="./font-awesome/css/font-awesome.min.css">
+  <script src="./jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>
+
+  <script>
+    $(document).ready(function(){
+      $("#guilai").click(function(){
+        alert("Mã kích hoạt đã được gửi đến điện thoại của bạn.");
+      })
+
+      $("#xacnhan").click(function(){
+        if ($("#nhapma").val() == "123") {
+          alert("Bạn đã đăng ký thành công");
+          window.location = "./home.html";  
+        } else {
+          $("#err").text("*Mã xác nhận không chính xác").show().fadeOut(5000);
+        }
+      })
+    })
+  </script>
+
+  <style>
+    #form-dangky{
+      height: 300px;
+      padding-top: 20px;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    #err{
+      color: red;
+      padding-left: 16px;
+    }
+
+    #form-dangky p {
+      padding-left: 16px;
+    }
+  </style>
+</head>
+
+
+<body>
+  <div class="container" id="wrap">
+    <div class="header">
+      <div class="logo pull-left">
+        <br>
+        <a href=""><img src="./images/logonhom/logo_tp2v.png"></a>
+      </div>
+      <div class="pull-right">
+        <br>
+        <br>
+        <p>
+          <i style="padding-right: 10px;" class="fa fa-user fa-2x"></i>
+          Bùi Thanh Phương   
+          <i style="padding-left: 10px;"class="fa fa-caret-down"></i>
+        </p>        
+      </div>
+    </div>
+    <div style="height: 900px;">
+      <h1 class="title">Tạo tài khoản ID TP2V của bạn</h1>
+      <div class="col-md-7">Thông tin về trang</div>
+      <div class="col-md-5" id="form-dangky">
+        <p>Xin chào Bùi Thanh Phương</p>
+        <p>Bạn đã đăng ký thành công với số điện thoại <b>01676719148</b>.
+          Bạn hãy nhập mã xác thực mà chúng tôi vừa gửi đến số điện thoại của bạn để kích hoạt tài khoản.
+        </p>
+        <div class="form-group" style="height:30px;">
+          <div class="col-md-8">
+            <input id="nhapma" type="text" class="form-control input-md">
+          </div>
+          <div class="col-md-4">
+            <button class="btn btn-primary" id="xacnhan">Xác nhận</button>          
+          </div>
+        </div>
+        <div id="err"></div>
+        <p>Bạn chưa nhận được mã kích <a href="" id="guilai">vào đây</a> để hệ thống gửi lại mã cho bạn.</p>
+      </div>
+    </div>
+    <div class="footer">
+      <br>
+      <a>Điều khoản dịch vụ </a>
+      <span> và <a href="">Chính sách bảo mật</a></span>
+      <br>
+      <p>@2015 Bởi TP2V</p>
+    </div>
+  </div>
+
+</body>
+</html>

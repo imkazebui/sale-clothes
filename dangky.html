@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>Website bán hàng thời trang</title>
+
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="./CSS/dangky.css">
+  <link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="./font-awesome/css/font-awesome.min.css">
+  <script src="./jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>
+
+  <script>
+    $(document).ready(function(){
+      $("#form-infor").submit(function(event){
+        if($("#taikhoan").val() == "admin"){
+          $("#err-tk").text("*Tài khoản đã có").show().fadeOut(2000);
+          event.preventDefault();
+        } else if ($("#mk1").val() != $("#mk2").val()) {
+          $("#err-mk").text("*Mật khẩu không trùng khớp").show().fadeOut(2000);
+          event.preventDefault();
+        } else {
+          
+        } 
+      })
+    })
+  </script>
+</head>
+
+
+<body>
+  <div class="container" id="wrap">
+    <div class="header">
+      <div class="logo pull-left">
+        <br>
+        <a href=""><img src="./images/logonhom/logo_tp2v.png"></a>
+      </div>
+      <div class="pull-right">
+        <br>
+        <a href="" class="pull-right">Đăng nhập</a>
+        <br>
+        <p><span class="fa fa-mobile fa-2x"></span> 19002055 (8h - 17h từ thứ 2 đến thứ 6 | 8h - 12h thứ 7)</p>
+      </div>
+    </div>
+    <div style="height: 900px;">
+      <h1 class="title">Tạo tài khoản ID TP2V của bạn</h1>
+      <div class="col-md-7">Thông tin về trang</div>
+      <div class="col-md-5" id="form-dangky">
+        <div>
+          <h3 class="title">Đăng ký tài khoản</h3>
+          <div class="login-social">            
+            <a href="#" class="btn btn-block btn-danger" style="background-color: blue; border: blue;"><span class="fa fa-facebook"></span> Đăng ký tài khoản bằng Facebook</a>
+            <br>
+            <a href="#" class="btn btn-block btn-danger"><span class="fa fa-google"></span> Đăng ký tài khoản bằng Google</a>
+            <br>
+          </div>
+          <div id="wrap-form">
+            <form class="form-horizontal" id="form-infor" action="./dangky-phuong.html">
+              <fieldset>
+
+            <!-- Form Name -->
+                <legend class="title">------- Hoặc đăng ký bằng -------</legend>
+
+            <!-- Text input-->
+                <div class="form-group">
+                  <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-user"></i></span>
+                    <input type="text" class="form-control" id="taikhoan" placeholder="Tên truy cập" aria-describedby="basic-addon1" required>
+                  </div> 
+                  <div id="err-tk" class="err"></div>
+                </div>
+
+                <div class="form-group">
+                  <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-user"></i></span>
+                    <input type="text" class="form-control" placeholder="Họ và tên" aria-describedby="basic-addon1" required>
+                  </div> 
+                </div>
+                
+                <div class="form-group">
+                  <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-envelope"></i></span>
+                    <input type="email" class="form-control" placeholder="Email" aria-describedby="basic-addon1" required>
+                  </div> 
+                </div>
+
+                <div class="form-group">
+                  <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-phone"></i></span>
+                    <input type="text" class="form-control" placeholder="Số điện thoại di động" aria-describedby="basic-addon1" required>
+                  </div> 
+                </div>
+
+                <div class="form-group">
+                  <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-lock"></i></span>
+                    <input type="password" class="form-control" id="mk1" placeholder="Mật khẩu" aria-describedby="basic-addon1" required>
+                  </div> 
+                </div>
+
+                <div class="form-group">
+                  <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-lock"></i></span>
+                    <input type="password" class="form-control" id="mk2" placeholder="Nhập lại mật khẩu" aria-describedby="basic-addon1" required>
+                  </div> 
+                  <div id="err-mk" class="err"></div>
+                </div>
+
+                <div class="form-group">
+                  <select id="selectbasic" name="selectbasic" class="form-control" required>
+                    <option value="0">Giới tính</option>
+                    <option value="1">Nam</option>
+                    <option value="2">Nữ</option>
+                  </select>
+                </div>      
+
+                <div class="form-group">
+                  <p>Ngày sinh</p>
+
+                  <input type="text" class=" col-md-3"  placeholder="Ngày" aria-describedby="basic-addon1" required> 
+
+                  <select id="month" name="selectbasic" class="col-md-4" required>
+                    <option value="0">Tháng</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                  </select>    
+
+                  <input type="text" class=" col-md-3" placeholder="Năm" aria-describedby="basic-addon1" required>                
+                </div>
+
+                <div class="form-group">
+                  <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1"> Không có mã số thuế
+                </div>   
+
+                <div class="form-group">
+                  <button type="submit" class="btn btn-primary btn-default" id="xacnhan" >Xác nhận</button>
+                  <a href=""> Quay lại TP2V.com</a>
+                </div>      
+                
+                <p>Chọn đăng ký là bạn đã đồng ý với các <a>Điều khoản dịch vụ</a> của Vatgia.com</p>
+          
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <br>
+      <a>Điều khoản dịch vụ </a>
+      <span> và <a href="">Chính sách bảo mật</a></span>
+      <br>
+      <p>@2015 Bởi TP2V</p>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+#hide_chat{
+  background-color: #365db5;
+  border: 1px solid #2C498F;
+  border-radius: 5px 5px 0 0;
+  bottom: -1px;
+  box-shadow: 0 0 1px #fff inset;
+  height: 32px;
+  line-height: 32px;
+  padding:  0px 30px 0 10px;
+  position: fixed;
+  right: 42px;
+  z-index: 9999;
+  border-bottom: none;
+  font-weight: bold;
+  cursor: pointer;
+  min-width: 207px;
+  max-width: 320px;
+  white-space: nowrap;
+  font-family: arial;
+  font-size: 15px;
+  color: #fff;
+}
+
+#hide_chat i{
+  position: absolute;
+  right: 0;
+  margin: 7px 7px 0 0;
+}
+
+.login_tab_payment{
+  width: 1004px;
+  display: block;
+  margin: 0 auto 6px;
+  border: 1px dashed #dedede;
+  background: #f8f8f8;
+  padding: 10px 20px;
+}
+
+.logoTP2V{
+  background: url("../images/logonhom/logo_tp2v.png") 0px center #FFFFFF;
+  width: 190px;
+  height: 50px;
+  display: block;
+  margin: 30px auto 30px;
+}
+
+.mid{
+  border: 1px solid #ececec;
+  border-top: none;
+  border-bottom: none;
+  height: 500px;
+}
+
+.payment{
+  width: 1004px;
+  margin: 0px auto;
+  border: 1px solid #ececec;
+  margin-bottom: 300px;
+  font-size: 13px;
+  height: 500px;  
+}
+
+#pad{
+  padding: 20px;
+}
+
+.infor_buyer{
+  border: 1px dashed #dcdcdc;
+  padding: 8px;
+  background: #f8f8f8;  
+}
+
+.baomat_logo{
+  background: url("../images/thoitrang/baomat.png") no-repeat transparent;
+  width: 55px;
+  height: 69px;
+  display: block;
+  margin: 10px 10px 0px 0px;
+}
+
+.baomat li{
+  display: inline;
+  font-size: 11px;
+}
+
+.baomat ul{
+  padding-left: 0px;
+}
+
+.title{
+  height: 25px;
+  line-height: 25px;
+  color: #434248;
+  font-size: 16px;
+}
+
+.baomat{
+  border: 1px dashed #dcdcdc;
+  background: #f8f8f8;  
+  height: 160px;
+  padding-top: 10px;
+}

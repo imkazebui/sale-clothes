@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>Website bán hàng thời trang</title>
+
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="./font-awesome/css/font-awesome.min.css">
+  <script src="./jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>
+
+  <script>
+    $(document).ready(function(){
+      $("#dangnhap").click(function(){
+        if ($("#tk").val() == "admin" && $("#mk").val() == "123") {
+          window.location = "./home.html"
+        } else {
+          $(".err").text("*Sai tên đăng nhập hoặc mật khẩu");
+        }
+      })
+    })
+  </script>
+  <style>
+    .btn-height{
+      height: 45px;
+    }
+    .div-height{
+      padding-bottom: 20px;
+    }
+    .mid{
+      padding-left: 70px;
+      padding-right: 70px;
+    }
+    .header{
+      text-align: center;
+      padding-top: 40px;
+      padding-bottom: 10px;
+    }
+    .footer{
+      text-align: center;
+      border-top: 1px solid #e5e5e5;
+      padding-top: 10px;
+    }
+    .err{
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="col-md-3"></div>
+    <div class="col-md-6 mid">
+      <div class="header">
+        <a href="">
+          <img src="./images/logonhom/logo_tp2v.png">
+        </a>
+        <h2>Đăng nhập tài khoản</h2>  
+      </div>
+      
+      <div class="input-group div-height">
+        <span style="background: #294B78; color: white; font-weight: bold;" class="input-group-addon" id="basic-addon1"><i style="font-size: 20px;"class="fa fa-facebook"></i></span>
+        <input style="background: #325c95; color: white; font-weight: bold;" type="button" class="form-control btn-height" value="Đăng nhập bằng Facebook" >
+      </div> 
+      <div class="input-group div-height">
+        <span style="background: #981919; color: white; font-weight: bold;" class="input-group-addon" id="basic-addon1"><i class="fa fa-google"></i></span>
+        <input style="background: #be1f1f; color: white; font-weight: bold;" type="button" class="form-control btn-height" value="Đăng nhập bằng Google" >
+      </div> 
+      <div style="text-align: center; padding-bottom: 20px;">Hoặc đăng nhập bằng tài khoản TP2V</div>
+      <div class="input-group div-height">
+        <span class="input-group-addon" id="basic-addon1"><i class="fa fa-user"></i></span>
+        <input type="text" class="form-control btn-height" id="tk" placeholder="Tên truy cập" aria-describedby="basic-addon1">
+      </div> 
+      <div class="input-group div-height">
+        <span class="input-group-addon" id="basic-addon1"><i class="fa fa-lock"></i></span>
+        <input type="password" class="form-control btn-height" id="mk" placeholder="Mật khẩu" aria-describedby="basic-addon1">
+      </div>
+      <div class="err"></div>
+      <div class="input-group checkbox div-height">
+        <label class="">
+          <input type="checkbox" name="" value="1">
+          Nhớ đăng nhập
+        </label>
+        <a href="./quenmk.html" style="padding-left:213px;">Quên mật khẩu</a>
+      </div>
+      <div class="div-height">
+        <button class="btn btn-primary form-control btn-height" id="dangnhap">Đăng nhập</button>
+        <p style="text-align: center; padding-top: 20px;">Bạn chưa có tài khoản? <a href="./dangky.html">Đăng ký ngay</a></p>
+      </div> 
+      <div class="footer" div-height>
+        <a href="">Điều khoản dịch vụ</a>
+        <span>và <a href="">Chính sách bảo mật</a></span> 
+        <p>@2015 bởi TP2V</p>
+      </div>
+    </div>
+
+    <div class="col-md-3"></div>
+  </div>
+</body>
+</html>
